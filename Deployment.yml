@@ -1,21 +1,24 @@
+---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-   name: mydeployments
+  name: deployment
 spec:
-   replicas: 2
-   selector:     
+  replicas: 2
+  #number of replicas generated
+  selector:
+    #assigns labels to the pods for future selection
     matchLabels:
-     name: deployment
-   template:
-      metadata:
-        labels:
-          app: deployment
-      spec:
-       containers:
-        - name: mycontainer
-          image: apurvbidkar/kubernetes_project
-          imagePullPolicy: Always
-          ports:
-          - conatainerPort: 80
-
+      app: deployment
+      version: v01
+  template:
+    metadata:
+      labels:
+        app: deployment
+        version: v01
+    spec:
+      containers:
+      - name: deployment
+        image: apurvbidkar/kubernetes_project
+        ports:
+        - containerPort: 80
