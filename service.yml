@@ -1,7 +1,7 @@
 kind: Service                             # Defines to create Service type Object
 apiVersion: v1
 metadata:
-  name: demoservice
+  name: deployment
 spec:
   ports:
     - port: 8080                             # Containers port exposed
