@@ -1,2 +1,2 @@
-[demo]
-192.168.1.228  ansible_ssh_user=apurvbidkar  ansible_ssh_pass=Apurv@123   host_key_checking = False
+[localhost]
+192.168.1.228  ansible_ssh_user=apurvbidkar  ansible_ssh_pass=Apurv@123   host_key_checking = False  enable_plugins = yaml, ini

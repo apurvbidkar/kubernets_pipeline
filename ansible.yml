@@ -1,6 +1,6 @@
 ---
 - name: apurv
-  hosts: demo
+  hosts: localhost
   remote_user: apurvbidkar
   become: yes
   tasks:
