@@ -1,7 +1,10 @@
-- hosts: demo
-  become: true
+---
+- name: apurv
+  hosts: demo
+  remote_user: apurvbidkar
+  become: yes
   tasks:
      - name: create new deployment
-       command: kubectl apply -f /home/apurvbidkar/Kubernets_pipeline/Deployment.yml
+       command: kubectl apply -f /home/apurvbidkar/kubernets_pipeline/Deployment.yml
      - name: create new service
-       command: kubectl apply -f /home/apurvbidkar/Kubernets_pipeline/service.yml
+       command: kubectl apply -f /home/apurvbidkar/kubernets_pipeline/service.yml
