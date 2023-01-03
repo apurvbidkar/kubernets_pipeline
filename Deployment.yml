@@ -1,20 +1,21 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-   name: mrdevops
+   name: mydeployments
 spec:
    replicas: 2
    selector:      # tells the controller which pods to watch/belong to
     matchLabels:
-     app: mrdevops
+     name: Devops
    template:
-      metadata:
-        labels:
-          app: mrdevops
-      spec:
-       containers:
-        - name: mrdevops
-          image: apurvbidkar/kubernetes_project
-          imagePullPolicy: Always
+     metadata:
+       name: testpod1
+       labels:
+         name: Devops
+     spec:
+      containers:
+        - name: nginx
+          image: apurvbidkar/kubernetes_project:34
+          imagePullPolicy: Never
           ports:
           - containerPort: 80
