@@ -1,23 +1,20 @@
----
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
+apiVersion: apps/v1
 metadata:
-  name: nginx
+   name: mrdevops
 spec:
-  strategy:
-    type: Recreate
-  selector:
+   replicas: 2
+   selector:      # tells the controller which pods to watch/belong to
     matchLabels:
-      app: nginx
-  replicas: 3 # tells deployment to run 1 pods matching the template
-  template: # create pods using pod definition in this template
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: apurvbidkar/kubernetes_project
-        ports:
-        - containerPort: 80
-
+     app: mrdevops
+   template:
+      metadata:
+        labels:
+          app: mrdevops
+      spec:
+       containers:
+        - name: mrdevops
+          image: apurvbidkar/kubernetes_project
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
