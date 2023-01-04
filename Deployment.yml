@@ -15,7 +15,7 @@ spec:
      spec:
       containers:
         - name: nginx
-          image: apurvbidkar/kubernetes_project:latest
+          image: apurvbidkar/kubernetes_project
           imagePullPolicy: Always
           ports:
           - containerPort: 80
