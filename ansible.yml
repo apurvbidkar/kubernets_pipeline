@@ -4,10 +4,6 @@
   remote_user: apurvbidkar
   become: yes
   tasks:
-     - name: delete old deployment
-       command: kubectl delete  -f /home/apurvbidkar/kubernets_pipeline/Deployment.yml
-     - name: delete old service
-       command: kubectl delete -f /home/apurvbidkar/kubernets_pipeline/service.yml
      - name: create new deployment
        command: kubectl apply -f /home/apurvbidkar/kubernets_pipeline/Deployment.yml
      - name: create new service
